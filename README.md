@@ -83,10 +83,18 @@ cd build
 
 3. Edit the [build.yml](build/build.yml) file with your favorite tech stack version;
 4. Match those version on the [docker compose](build/docker-compose.yml) file;
-5. Build up the images (for Mac OSX see below and then continue to step 6);
-
+5. Build up the images;
+a. Build for Linux;
 ```bash
 chmod +x build.sh ; ./build.sh
+```
+b. Build for Mac;
+```bash
+chmod +x build.sh ; ./build.sh mac
+```
+> **Note**: If you don't have GNU grep you can install it by running the following
+```bash
+brew install grep
 ```
 
 6. Start the cluster;
@@ -99,21 +107,6 @@ docker-compose up
 8. Stop the cluster by typing `ctrl+c` on the terminal;
 9. Run step 6 to restart the cluster.
 
-#### Mac OSX
-
-Mac OSX comes with the preinstalled BSD version of `grep`.
-In order to be able to build these Docker images, you will need to install GNU version of grep with Homebrew:
-
-```
-brew install grep
-```
-
-> **Note**: From now on you can use the GNU version of grep by calling ``ggrep``.
-Now you can run the steps described above, but add an argument in step 5:
-
-```bash
-chmod +x build.sh ; ./build.sh mac
-```
 
 ## <a name="tech-stack"></a>Tech Stack
 
